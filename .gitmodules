@@ -6,4 +6,4 @@
 	url = https://github.com/agrubb/gnome-terminal-colors-solarized.git
 [submodule "emacs-color-theme-solarized"]
 	path = emacs-color-theme-solarized
-	url = https://github.com/sellout/emacs-color-theme-solarized.git
+	url = https://github.com/agrubb/emacs-color-theme-solarized.git
