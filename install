@@ -1,0 +1,52 @@
+#!/bin/bash
+
+ETCDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+OS="$(uname -s)"
+
+# setup the symlinks
+echo "Creating symlinks..."
+
+case "$OS" in
+Darwin)
+        if [[ "$(type -p ln)" == *coreutils* ]]
+        then
+            function link {
+                echo "linking $2 -> $1"
+                ln -iTs $1 $2
+            }
+        else
+            function link {
+                echo "linking $2 -> $1"
+                if [ -d "$2" ]
+                then
+                    echo "link target $2 is a directory, cannot overwrite on OSX"
+                else
+                    ln -ihs $1 $2
+                fi
+            }
+        fi
+        ;;
+Linux)
+        function link {
+            echo "linking $2 -> $1"
+            ln -iTs $1 $2
+        }
+        ;;
+*)
+        echo "Unknown OS '$OS'"
+        exit
+        ;;
+esac
+
+link $ETCDIR/profile ${HOME}/.profile
+
+link $ETCDIR/bash_profile ${HOME}/.bash_profile
+link $ETCDIR/bashrc ${HOME}/.bashrc
+
+link $ETCDIR/gitconfig ${HOME}/.gitconfig
+link $ETCDIR/gitignore ${HOME}/.gitignore
+link $ETCDIR/tmux.conf ${HOME}/.tmux.conf
+link $ETCDIR/dircolors.aixterm ${HOME}/.dircolors
+
+# link $ETCDIR/emacs/init.el ${HOME}/.emacs.d/init.el
+# link $ETCDIR/emacs/lisp ${HOME}/.emacs.d/lisp

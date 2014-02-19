@@ -1,0 +1,20 @@
+[user]
+	email = agrubb@cmu.edu
+	name = Alex Grubb
+[core]
+	excludesfile = ~/.gitignore
+	editor = emacs -nw
+[alias]
+	graph = log --graph --all --format=format:'%C(blue)%h%C(reset) - %C(cyan)%aD%C(reset) %C(green)(%ar)%C(reset)%C(yellow)%d%C(reset)%n''          %s %C(bold)%an%C(reset)' --abbrev-commit
+	shortgraph = log --graph --all --format=format:'%C(blue)%h%C(reset) - %C(cyan)%aD%C(reset) %C(green)(%ar)%C(reset)%C(yellow)%d%C(reset)%n''          %s %C(bold)%an%C(reset)' --abbrev-commit --simplify-by-decoration
+[github]
+	user = agrubb
+	token = b02d97bf34ab493054981f06b81588a5
+[mergetool.ediff]
+        cmd = emacs -nw --eval "\\(ediff-merge-files-with-ancestor \"$LOCAL\" \"$REMOTE\" \"$BASE\" nil \"$MERGED\"\\)"
+[color]
+	ui = true
+[color "status"]
+	added = red
+	changed = yellow
+	untracked = green
