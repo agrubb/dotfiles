@@ -46,7 +46,7 @@ link $ETCDIR/bashrc ${HOME}/.bashrc
 link $ETCDIR/gitconfig ${HOME}/.gitconfig
 link $ETCDIR/gitignore ${HOME}/.gitignore
 link $ETCDIR/tmux.conf ${HOME}/.tmux.conf
-link $ETCDIR/dircolors.aixterm ${HOME}/.dircolors
+link $ETCDIR/dircolors-solarized/dircolors.aixterm-dark ${HOME}/.dircolors
 
 # link $ETCDIR/emacs/init.el ${HOME}/.emacs.d/init.el
 # link $ETCDIR/emacs/lisp ${HOME}/.emacs.d/lisp
