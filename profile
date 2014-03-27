@@ -4,7 +4,7 @@
 ##                 Variables
 ##############################################
 
-export PATH=${HOME}/etc/bin:${HOME}/bin:${PATH}
+export PATH=${HOME}/dotfiles/bin:${HOME}/bin:${PATH}
 # Python variables
 export PYTHONPATH=${HOME}/lib/python:$PYTHONPATH
 
